@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:20:53 by bsuc              #+#    #+#             */
-/*   Updated: 2024/06/05 14:12:21 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:44:46 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,10 +52,5 @@
 # define PLAY_HEIGHT 32 // ??
 # define PLAYER_SPEED 2
 # define PLAYER_WIDTH 8
-
-
-
-
-
 
 #endif

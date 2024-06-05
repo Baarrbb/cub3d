@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 18:00:02 by bsuc              #+#    #+#             */
-/*   Updated: 2024/03/17 22:10:32 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:47:54 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ static void	play_pos(t_game *game)
 		{
 			if (ft_strchr("NSEW", game->parsing->map[i][j]))
 			{
-				game->pos_x = j;
-				game->pos_y = i;
 				game->play_x = j * IMG_SIZE + IMG_SIZE / 2;
 				game->play_y = i * IMG_SIZE + IMG_SIZE / 2;
 				dir_ang(game, i, j);

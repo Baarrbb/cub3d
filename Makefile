@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 23:25:19 by marvin            #+#    #+#              #
-#    Updated: 2024/06/05 14:18:19 by marvin           ###   ########.fr        #
+#    Updated: 2024/06/05 14:58:55 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,16 @@ _NEW_BLUE=\x1b[38;5;80m
 _NEW_YELLOW=\x1b[38;5;228m
 _GREEN_BOLD=\033[1;32m
 _LIGHT_GREY=\x1b[38;5;242m
+_ORANGE=\x1b[38;5;009m
+_VERT=\x1b[38;5;029m
+_VERT_UNDER=\033[0;4m\x1b[38;5;029m
+_VERT_BOLD=\033[1m\x1b[38;5;029m
+_VERT_REV=\x1b[48;5;029m
+
+_PURPLE=\x1b[38;5;093m
+_PURPLE_UNDER=\033[0;4m\x1b[38;5;093m
+_PURPLE_BOLD=\033[1m\x1b[38;5;093m
+_PURPLE_REV=\x1b[48;5;093m
 
 MAKEFLAGS += --no-print-directory
 OPTIONS_PRINTED = /tmp/options_printed
@@ -59,6 +69,7 @@ SRC_MAIN = \
 	$(SRC_DIR)/mlx_pixel.c \
 	$(SRC_DIR)/key_event.c \
 	$(SRC_DIR)/trigo_utils.c \
+	$(SRC_DIR)/move.c \
 	$(SRC_DIR)/main.c
 
 SRC_PARS = \
@@ -87,11 +98,9 @@ LIBFT = libft/libft.a
 LIB = -Lminilibx-linux -lmlx -lXext -lX11 -lm
 INC = -I./headers -Iminilibx-linux
 
-#ajouter regle pour compilation minilibx
-
 all : $(NAME)
 
-print_options : $(OPTIONS_PRINTED)
+# print_options : $(OPTIONS_PRINTED)
 
 $(OPTIONS_PRINTED) :
 	@ /bin/bash -c "echo"
@@ -100,6 +109,10 @@ $(OPTIONS_PRINTED) :
 	@ touch $(OPTIONS_PRINTED)
 
 $(NAME) : $(LIBFT) $(OPTIONS_PRINTED) $(OBJ_DIR) $(OBJ)
+	@ /bin/bash -c "echo"
+	@ /bin/bash -c "echo -e \"$(_PURPLE_UNDER)Configuration minilibx-linux$(_END)\""
+	@ /bin/bash -c "echo"
+	@ make -C minilibx-linux
 	@ /bin/bash -c "echo"
 	@ /bin/bash -c "echo -e \"$(_NEW_BLUE)Linking files creating binary $(NAME)$(_END)\""
 	@ /bin/bash -c "echo -e \"$(CC) $(CFLAGS) $(notdir $(OBJ) $(LIBFT))\""

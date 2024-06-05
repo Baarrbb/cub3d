@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:08:53 by marvin            #+#    #+#             */
-/*   Updated: 2024/06/05 14:09:50 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:47:52 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ typedef struct s_game
 
 	t_coor	hit_wall;
 
-	int		pos_x;
-	int		pos_y;
 	double	play_x;
 	double	play_y;
 	double	play_ang;
