@@ -1,0 +1,142 @@
+last wall.y = 704.000000 et au centre + 1 y 704.000000
+diff 0.000000
+last wall.x = 527.500726 et au centre + 1 x 526.782179
+diff -0.718547
+cos 0.510824 sin -0.859685
+la quat
+tot_x -32.334615
+cos 0.509417 sin -0.860520
+la quat
+tot_x -63.950682
+cos 0.508008 sin -0.861352
+la quat
+tot_x -63.232135
+cos 0.506598 sin -0.862182
+la quat
+tot_x -62.513588
+cos 0.505187 sin -0.863010
+la quat
+tot_x -61.795041
+cos 0.503774 sin -0.863836
+la quat
+tot_x -61.076494
+cos 0.502360 sin -0.864659
+la quat
+tot_x -60.357947
+cos 0.500944 sin -0.865479
+la quat
+tot_x -59.639400
+cos 0.499528 sin -0.866298
+la quat
+tot_x -58.920853
+cos 0.498109 sin -0.867114
+la quat
+tot_x -58.202306
+cos 0.496690 sin -0.867928
+la quat
+tot_x -57.483759
+cos 0.495269 sin -0.868740
+la quat
+tot_x -56.765212
+cos 0.493847 sin -0.869549
+la quat
+tot_x -56.046665
+cos 0.492424 sin -0.870356
+la quat
+tot_x -55.328118
+cos 0.490999 sin -0.871160
+la quat
+tot_x -54.609571
+cos 0.489573 sin -0.871962
+la quat
+tot_x -53.891024
+cos 0.488145 sin -0.872762
+la quat
+tot_x -53.172477
+cos 0.486717 sin -0.873560
+la quat
+tot_x -52.453930
+cos 0.485287 sin -0.874355
+la quat
+tot_x -51.735383
+cos 0.483855 sin -0.875148
+la quat
+tot_x -51.016836
+cos 0.482423 sin -0.875939
+la quat
+tot_x -50.298289
+cos 0.480989 sin -0.876727
+la quat
+tot_x -49.579742
+cos 0.479554 sin -0.877513
+la quat
+tot_x -48.861195
+cos 0.478117 sin -0.878296
+la quat
+tot_x -48.142648
+cos 0.476679 sin -0.879077
+la quat
+tot_x -47.424101
+cos 0.475240 sin -0.879856
+la quat
+tot_x -46.705554
+cos 0.473800 sin -0.880632
+la quat
+tot_x -45.987007
+cos 0.472358 sin -0.881407
+la quat
+tot_x -45.268460
+cos 0.470916 sin -0.882178
+la quat
+tot_x -44.549913
+cos 0.469472 sin -0.882948
+la quat
+tot_x -43.831366
+cos 0.468026 sin -0.883715
+la quat
+tot_x -43.112819
+cos 0.466580 sin -0.884479
+la quat
+tot_x -42.394272
+cos 0.465132 sin -0.885241
+la quat
+tot_x -41.675725
+cos 0.463683 sin -0.886001
+la quat
+tot_x -40.957178
+cos 0.462232 sin -0.886759
+la quat
+tot_x -40.238631
+cos 0.460781 sin -0.887514
+la quat
+tot_x -39.520084
+cos 0.459328 sin -0.888267
+la quat
+tot_x -38.801537
+cos 0.457874 sin -0.889017
+la quat
+tot_x -38.082990
+cos 0.456419 sin -0.889765
+la quat
+tot_x -37.364443
+cos 0.454962 sin -0.890511
+la quat
+tot_x -36.645896
+cos 0.453504 sin -0.891254
+la quat
+tot_x -35.927349
+cos 0.452046 sin -0.891995
+la quat
+tot_x -35.208802
+cos 0.450585 sin -0.892733
+la quat
+tot_x -34.490255
+cos 0.449124 sin -0.893469
+la quat
+tot_x -33.771708
+cos 0.447662 sin -0.894203
+la quat
+tot_x -33.053161
+cos 0.446198 sin -0.894934
+la quat
+tot_x -32.334615
