@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:09:02 by marvin            #+#    #+#             */
-/*   Updated: 2024/06/05 14:12:24 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:13:16 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,5 @@ void			check_max_trigo(double ang);
 void			handle_error(const char *s, t_parse *parsing, int ex);
 void			free_ptr(t_game *game);
 int				win_exit(t_game *game);
-
 
 #endif
