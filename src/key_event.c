@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:34:32 by bsuc              #+#    #+#             */
-/*   Updated: 2024/03/21 14:21:47 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 14:07:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,22 +83,94 @@ static void	key_move(t_game *game, int keycode)
 	}
 }
 
-int	get_key_event(int keycode, t_game *game)
+// int	get_key_event(int keycode, t_game *game)
+// {
+// 	if (keycode == XK_Escape)
+// 		win_exit(game);
+// 	if (keycode == XK_Left)
+// 	{
+// 		game->play_ang += (M_PI * 2 / 180);
+// 		check_max_trigo(game->play_ang);
+// 	}
+// 	if (keycode == XK_Right)
+// 	{
+// 		game->play_ang -= (M_PI * 2 / 180);
+// 		check_max_trigo(game->play_ang);
+// 	}
+// 	if (keycode == XK_w || keycode == XK_d || keycode == XK_s
+// 		|| keycode == XK_a)
+// 		key_move(game, keycode);
+// 	return (0);
+// }
+
+int	release_key(int keycode, t_game *game)
+{
+	// if (game->render)
+	// {
+	// 	game->key_event.l_view = 0;
+	// 	game->key_event.r_view = 0;
+	// 	game->key_event.f_move = 0;
+	// 	game->key_event.r_move = 0;
+	// 	game->key_event.b_move = 0;
+	// 	game->key_event.l_move = 0;
+	// }
+	if (keycode == XK_Left)
+		game->key_event.l_view = 0;
+	if (keycode == XK_Right)
+		game->key_event.r_view = 0;
+	if (keycode == XK_w)
+		game->key_event.f_move = 0;
+	if (keycode == XK_d)
+		game->key_event.r_move = 0;
+	if (keycode == XK_s)
+		game->key_event.b_move = 0;
+	if (keycode == XK_a)
+		game->key_event.l_move = 0;
+	return (0);
+}
+
+int	press_key(int keycode, t_game *game)
 {
 	if (keycode == XK_Escape)
 		win_exit(game);
+	// if (game->render)
+	// 	return (0);
 	if (keycode == XK_Left)
-	{
-		game->play_ang += (M_PI * 2 / 180);
-		check_max_trigo(game->play_ang);
-	}
+		game->key_event.l_view = 1;
 	if (keycode == XK_Right)
+		game->key_event.r_view = 1;
+	if (keycode == XK_w)
+		game->key_event.f_move = 1;
+	if (keycode == XK_d)
+		game->key_event.r_move = 1;
+	if (keycode == XK_s)
+		game->key_event.b_move = 1;
+	if (keycode == XK_a)
+		game->key_event.l_move = 1;
+	// if (keycode == XK_q)
+	// 	shoot(game);
+	return (0);
+}
+
+int	key_event(t_game *game)
+{
+	if (game->key_event.l_view)
 	{
-		game->play_ang -= (M_PI * 2 / 180);
+		game->play_ang += (M_PI * 2 / 720);
 		check_max_trigo(game->play_ang);
 	}
-	if (keycode == XK_w || keycode == XK_d || keycode == XK_s
-		|| keycode == XK_a)
-		key_move(game, keycode);
+	if (game->key_event.r_view)
+	{
+		game->play_ang -= (M_PI * 2 / 720);
+		check_max_trigo(game->play_ang);
+	}
+	if (game->key_event.f_move)
+		key_move(game, XK_w);
+	if (game->key_event.b_move)
+		key_move(game, XK_s);
+	if (game->key_event.l_move)
+		key_move(game, XK_a);
+	if (game->key_event.r_move)
+		key_move(game, XK_d);
 	return (0);
 }
