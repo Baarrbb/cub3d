@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/08 16:34:32 by bsuc              #+#    #+#             */
-/*   Updated: 2024/06/05 15:24:47 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/05 16:17:37 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int	press_key(int keycode, t_game *game)
 {
 	if (keycode == XK_Escape)
 		win_exit(game);
+	if (keycode == XK_q)
+		shoot(game);
 	if (game->render)
 		return (0);
 	if (keycode == XK_Left)
@@ -56,8 +58,6 @@ int	press_key(int keycode, t_game *game)
 		game->key_event.b_move = 1;
 	if (keycode == XK_a)
 		game->key_event.l_move = 1;
-	if (keycode == XK_q)
-		shoot(game);
 	return (0);
 }
 
