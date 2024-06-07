@@ -6,7 +6,7 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 23:25:19 by marvin            #+#    #+#              #
-#    Updated: 2024/06/05 15:52:48 by marvin           ###   ########.fr        #
+#    Updated: 2024/06/07 12:49:41 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -93,7 +93,7 @@ OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 NAME = cub3D
 RM = rm -rf
 CC = cc
-CFLAGS = -Wall -Wextra -g3 -O3 #-Werror
+CFLAGS = -Wall -Wextra -gdwarf-2 -O3 #-Werror
 LIBFT = libft/libft.a
 LIB = -Lminilibx-linux -lmlx -lXext -lX11 -lm
 INC = -I./headers -Iminilibx-linux
