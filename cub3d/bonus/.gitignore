@@ -1,5 +1,5 @@
 obj/
 *.o
 *.a
-cub3D
 minilibx-linux/
+cub3D
