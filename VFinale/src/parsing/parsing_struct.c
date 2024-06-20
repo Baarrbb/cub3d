@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:26:25 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/21 15:39:26 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 15:56:41 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void	get_cubfile(t_file **init, char *file)
 	char	*line;
 
 	fd = open(file, O_RDONLY);
+	if (fd == -1)
+	{
+		free_struct(*init);
+		handle_error_pars("Wrong filename\n");
+	}
 	line = get_next_line(fd);
 	while (line && line[0] == '\n')
 		line = get_next_line(fd);
@@ -68,8 +73,6 @@ void	get_cubfile(t_file **init, char *file)
 	if (errno != 0)
 	{
 		free_struct(*init);
-		ft_putstr_fd(RED BOLD "Error\n" RESET, 2);
-		ft_putstr_fd("get_next_line() failed\n", 2);
-		exit(EXIT_FAILURE);
+		handle_error_pars("get_next_line() failed\n");
 	}
 }

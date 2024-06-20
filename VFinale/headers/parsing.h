@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/04 14:20:20 by marvin            #+#    #+#             */
-/*   Updated: 2024/06/19 15:49:43 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 15:48:43 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int				file_len(t_file *file);
 void			empty_init(t_file *init);
 int				check_border(char **copy_map);
 int				line_copy(t_data *d, int i, int j, char **map);
+void			handle_error_pars(char *s);
 
 /*                   PARSING_CHARS.C               */
 void			fill_struct(t_parse *parsed, t_file *init);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 17:19:43 by bsuc              #+#    #+#             */
-/*   Updated: 2024/06/19 23:28:36 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 16:15:37 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ int	main(int ac, char **av)
 
 	if (ac != 2)
 	{
-		ft_putstr_fd(RED BOLD "Error\n" RESET "Not enough arguments\n", 2);
+		ft_putstr_fd(RED BOLD "Error\n" RESET "Wrong arguments\n", 2);
+		ft_putstr_fd(BLUE "\nUsage : " RESET "./cub3D <filename>.cub\n", 2);
 		return (1);
 	}
 	pars = parsing(av);

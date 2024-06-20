@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   door_animations.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ytouihar <ytouihar@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 17:22:26 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/06/20 14:45:00 by ytouihar         ###   ########.fr       */
+/*   Updated: 2024/06/20 15:34:41 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ void	open_door(t_game *game)
 	ptr = game->doors;
 	while (ptr)
 	{
-		xdist = abs((int)floor(game->play_x / 64) - ptr->startx);
-		ydist = abs((int)floor(game->play_y / 64) - (ptr->starty - 1));
+		xdist = abs((int)floor(game->play_x / IMG_SIZE) - ptr->startx);
+		ydist = abs((int)floor(game->play_y / IMG_SIZE) - (ptr->starty - 1));
 		if (xdist + ydist <= 2 && xdist + ydist >= -2)
 			animation_choosing(game, ptr);
 		ptr = ptr->next;

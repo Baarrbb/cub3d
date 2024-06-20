@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   door_init.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 16:32:09 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/06/19 18:02:37 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 15:51:11 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,9 @@ static void	tree_doors(t_door **doors, int y, int x)
 	t_door	*door;
 	t_door	*ptr;
 
-	door = malloc(sizeof(t_door));
+	door = ft_calloc(1, sizeof(t_door));
+	if (door == NULL)
+		return ;
 	door->startx = x;
 	door->starty = y + 1;
 	door->endx = x + 1;
@@ -55,8 +57,6 @@ static void	tree_doors(t_door **doors, int y, int x)
 	door->endpx = door->endx * (int)IMG_SIZE;
 	door->endpy = door->endy * (int)IMG_SIZE + (int)(IMG_SIZE / 2);
 	door->time = get_current_time(0);
-	door->open = 0;
-	door->next = NULL;
 	if (*doors == NULL)
 	{
 		*doors = door;

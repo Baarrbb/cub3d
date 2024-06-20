@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 09:13:35 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/21 15:39:31 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 15:48:31 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,11 @@ int	line_copy(t_data *d, int i, int j, char **map)
 		d->copy_map[d->index][d->index_j + 1] = '\0';
 	}
 	return (0);
+}
+
+void	handle_error_pars(char *s)
+{
+	ft_putstr_fd(RED BOLD "Error\n" RESET, 2);
+	ft_putstr_fd(s, 2);
+	exit(EXIT_FAILURE);
 }

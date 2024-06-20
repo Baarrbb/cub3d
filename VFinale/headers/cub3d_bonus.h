@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 14:57:47 by marvin            #+#    #+#             */
-/*   Updated: 2024/06/19 23:27:18 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 16:23:33 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@
 /*       ERROR                          */
 # define BOLD "\x1b[1m"
 # define RED "\x1b[31m"
+# define BLUE "\x1b[36m"
 # define RESET "\x1b[0m"
 
 /*       PARSING                        */
@@ -47,8 +48,6 @@
 # define WEST 8
 
 /*       COLORS                        */
-// # define JAUNE 0x987456
-// # define BLEU 0xf1445
 # define ROSE 0xff11b2
 # define BLEU 0xf1034A6
 # define BLANC 0x000000
@@ -67,7 +66,7 @@
 
 # define WIN_WIDTH 640
 # define WIN_HEIGHT 400
-# define PLAYER_SPEED 2
+# define PLAYER_SPEED 4
 # define TORCHE 100
 
 #endif

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ytouihar <ytouihar@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 23:25:19 by marvin            #+#    #+#              #
-#    Updated: 2024/06/20 14:40:51 by ytouihar         ###   ########.fr        #
+#    Updated: 2024/06/20 15:37:31 by bsuc             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -111,7 +111,7 @@ SRC = \
 OBJ_DIR = src/obj
 OBJ = $(patsubst $(SRC_DIR)/%.c,$(OBJ_DIR)/%.o,$(SRC))
 
-NAME = cub3d
+NAME = cub3D
 RM = rm -rf
 CC = clang
 CFLAGS = -Wall -Wextra -gdwarf-2 -O3 #-Werror
@@ -132,9 +132,9 @@ $(OPTIONS_PRINTED) :
 	@ touch $(OPTIONS_PRINTED)
 
 $(NAME) : $(LIBFT) $(OPTIONS_PRINTED) $(OBJ_DIR) $(OBJ)
-# @ /bin/bash -c "echo"
-# @ /bin/bash -c "echo -e \"$(_PURPLE_UNDER)Configuration minilibx-linux$(_END)\""
-# @ /bin/bash -c "echo"
+	@ /bin/bash -c "echo"
+	@ /bin/bash -c "echo -e \"$(_PURPLE_UNDER)Configuration minilibx-linux$(_END)\""
+	@ /bin/bash -c "echo"
 	@ make -C minilibx-linux
 	@ /bin/bash -c "echo"
 	@ /bin/bash -c "echo -e \"$(_NEW_BLUE)Linking files creating binary $(NAME)$(_END)\""
