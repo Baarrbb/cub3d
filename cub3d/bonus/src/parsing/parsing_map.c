@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:27:34 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/06/06 21:30:22 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:48:48 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,22 +78,22 @@ int	check_correct_walls(char **map, int x, int y, int type)
 {
 	if (type == UP && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the up part of the map\n", 2), 1);
 	}
 	else if (type == DOWN && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the down part of the map\n", 2), 1);
 	}
 	else if (type == RIGHT && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the right part of the map\n", 2), 1);
 	}
 	else if (type == LEFT && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the left part of the map\n", 2), 1);
 	}
 	return (0);

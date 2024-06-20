@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   right_side.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 19:25:43 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/21 15:39:38 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/20 17:48:10 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,12 +78,9 @@ int	handle_right(char **copy_map)
 		return (1);
 	while (copy_map[i + 1] && copy_map[i])
 	{
-		if (copy_map[i][ft_strlen(copy_map[i]) - 1] == ' ')
-		{
-			if (check_correct_walls(copy_map, i, \
-			ft_strlen(copy_map[i]) - 2, RIGHT) == 1)
-				return (1);
-		}
+		if (check_correct_walls(copy_map, i, \
+		ft_strlen(copy_map[i]) - 2, RIGHT) == 1)
+			return (1);
 		i++;
 	}
 	return (0);

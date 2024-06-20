@@ -6,7 +6,7 @@
 /*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 15:27:34 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/19 17:22:35 by bsuc             ###   ########.fr       */
+/*   Updated: 2024/06/20 17:51:00 by bsuc             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,22 +78,22 @@ int	check_correct_walls(char **map, int x, int y, int type)
 {
 	if (type == UP && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the up part of the map\n", 2), 1);
 	}
 	else if (type == DOWN && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the down part of the map\n", 2), 1);
 	}
 	else if (type == RIGHT && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the right part of the map\n", 2), 1);
 	}
 	else if (type == LEFT && find_path(x, y, map, type) == 1)
 	{
-		ft_putstr_fd(RED BOLD"Error\n", 2);
+		ft_putstr_fd(RED BOLD"Error\n" RESET, 2);
 		return (ft_putstr_fd("Hole in the left part of the map\n", 2), 1);
 	}
 	return (0);
@@ -116,13 +116,13 @@ int	parsing_map(t_parse *parsed)
 	{
 		ft_putstr_fd(RED BOLD "Error\n" RESET, 2);
 		ft_putstr_fd("Something is wrong with the player\n", 2);
-		return (1);
+		return (free_map(copy_map), 1);
 	}
 	if (error == 2)
 	{
 		ft_putstr_fd(RED BOLD "Error\n" RESET, 2);
 		ft_putstr_fd("Something is wrong with the spaces inside the map\n", 2);
-		return (1);
+		return (free_map(copy_map), 1);
 	}
 	return (check_border(copy_map));
 }
