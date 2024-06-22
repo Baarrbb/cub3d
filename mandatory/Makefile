@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: ersees <ersees@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/29 23:25:19 by marvin            #+#    #+#              #
-#    Updated: 2024/06/07 12:49:41 by marvin           ###   ########.fr        #
+#    Updated: 2024/06/22 21:38:48 by ersees           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -81,7 +81,8 @@ SRC_PARS = \
 	$(PARS_DIR)/parsing_utils.c \
 	$(PARS_DIR)/parsing.c \
 	$(PARS_DIR)/right_side.c \
-	$(PARS_DIR)/parsing_utils2.c
+	$(PARS_DIR)/parsing_utils2.c \
+	$(PARS_DIR)/parsing_chars_utils.c
 
 SRC = \
 	$(SRC_MAIN) \

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ersees <ersees@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 15:26:25 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/21 14:30:47 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/22 20:53:38 by ersees           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,10 @@ void	get_cubfile(t_file **init, char *file)
 	fd = open(file, O_RDONLY);
 	line = get_next_line(fd);
 	while (line && line[0] == '\n')
+	{
+		free(line);
 		line = get_next_line(fd);
+	}
 	while (line)
 	{
 		new = lstnew(line);

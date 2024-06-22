@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_utils2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ersees <ersees@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 09:13:35 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/19 16:04:01 by bsuc             ###   ########.fr       */
+/*   Updated: 2024/06/22 20:44:43 by ersees           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,16 @@ int	check_border(char **copy_map)
 	j = 0;
 	if (handle_right(copy_map) == 1)
 		return (free_map(copy_map), 1);
-	while (copy_map[++j + 1] != NULL)
-		if (check_correct_walls(copy_map, j, 0, LEFT) == 1)
-			return (free_map(copy_map), 1);
 	while (copy_map[0][++i + 1] != '\n')
 		if (check_correct_walls(copy_map, 0, i, UP) == 1)
 			return (free_map(copy_map), 1);
+	while (copy_map[++j + 1] != NULL)
+	{
+		if (check_correct_walls(copy_map, j, 0, LEFT) == 1)
+			return (free_map(copy_map), 1);
+		if (check_correct_walls(copy_map, j, i, RIGHT) == 1)
+			return (free_map(copy_map), 1);
+	}
 	i = 0;
 	while (copy_map[j][++i + 1] != '\0')
 		if (check_correct_walls(copy_map, j, i, DOWN) == 1)

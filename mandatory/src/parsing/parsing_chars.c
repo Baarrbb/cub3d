@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing_chars.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsuc <bsuc@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: ersees <ersees@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 16:37:42 by ytouihar          #+#    #+#             */
-/*   Updated: 2024/03/19 16:02:25 by bsuc             ###   ########.fr       */
+/*   Updated: 2024/06/22 21:40:25 by ersees           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static void	fill_map(t_parse *parsed, t_file *init)
 	parsed->map = map;
 }
 
-static int	fill_ceiling(t_parse *parsed, t_file *init, char direction)
+/*static int	fill_ceiling(t_parse *parsed, t_file *init, char direction)
 {
 	int	index;
 
@@ -64,9 +64,9 @@ static int	fill_ceiling(t_parse *parsed, t_file *init, char direction)
 		return (1);
 	}
 	return (0);
-}
+}*/
 
-static int	fill_floor(t_parse *parsed, t_file *init, char direction)
+static int	fill_ceiling(t_parse *parsed, t_file *init, char platform, int *done)
 {
 	int	index;
 
@@ -74,21 +74,44 @@ static int	fill_floor(t_parse *parsed, t_file *init, char direction)
 	while (init->line && init->line[index] == ' ')
 		index++;
 	index++;
-	if (init->line[index - 1] == direction)
+	if (init->line[index - 1] == platform)
 	{
+		if (*done == 0)
+			*done = 1;
+		else
+			errorfunctionparse(parsed, "There is already a ceiling.\n");
 		while (init->line && init->line[index] == ' ')
 			index++;
-		parsed->f_red = ft_atoi(&init->line[index]);
-		index = skip_nb_and_spaces(index, parsed, init);
-		if (parsed->f_red > 255 || parsed->f_red < 0)
+		if (init->line[index] < '0' && init->line[index] > '9')
 			errorfunctionparse(parsed, "Wrong red code\n");
-		parsed->f_green = ft_atoi(&init->line[index]);
-		if (parsed->f_green > 255 || parsed->f_green < 0)
-			errorfunctionparse(parsed, "Wrong green code\n");
-		index = skip_nb_and_spaces(index, parsed, init);
-		parsed->f_blue = ft_atoi(&init->line[index]);
-		if (parsed->f_blue > 255 || parsed->f_blue < 0)
-			errorfunctionparse(parsed, "Wrong blue code\n");
+		parsed->f_red = ft_atoi(&init->line[index]);
+		fill_utils(parsed, init, &index);
+		check_end_parse(parsed, init, index);
+		return (1);
+	}
+	return (0);
+}
+
+static int	fill_floor(t_parse *parsed, t_file *init, char platform, int *done)
+{
+	int	index;
+
+	index = 0;
+	while (init->line && init->line[index] == ' ')
+		index++;
+	index++;
+	if (init->line[index - 1] == platform)
+	{
+		if (*done == 0)
+			*done = 1;
+		else
+			errorfunctionparse(parsed, "There is already a floor.\n");
+		while (init->line && init->line[index] == ' ')
+			index++;
+		if (init->line[index] < '0' && init->line[index] > '9')
+			errorfunctionparse(parsed, "Wrong red code\n");
+		parsed->f_red = ft_atoi(&init->line[index]);
+		fill_util(parsed, init, &index);
 		check_end_parse(parsed, init, index);
 		return (1);
 	}
@@ -128,8 +151,12 @@ void	fill_struct(t_parse *parsed, t_file *init)
 {
 	int	check;
 	int	count;
+	int	donec;
+	int	donef;
 
 	count = 0;
+	donec = 0;
+	donef = 0;
 	parsed->init = init;
 	while (init && count < 6)
 	{
@@ -138,8 +165,8 @@ void	fill_struct(t_parse *parsed, t_file *init)
 		check += parse_direction(parsed, init, "EA", &parsed->east);
 		check += parse_direction(parsed, init, "SO", &parsed->south);
 		check += parse_direction(parsed, init, "WE", &parsed->west);
-		check += fill_floor(parsed, init, 'F');
-		check += fill_ceiling(parsed, init, 'C');
+		check += fill_floor(parsed, init, 'F', &donef);
+		check += fill_ceiling(parsed, init, 'C', &donec);
 		if (check <= 0)
 			errorfunctionparse(parsed, "Lacks something\n");
 		count++;

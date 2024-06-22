@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ersees <ersees@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/05 14:09:05 by marvin            #+#    #+#             */
-/*   Updated: 2024/06/05 14:12:12 by marvin           ###   ########.fr       */
+/*   Updated: 2024/06/22 21:40:01 by ersees           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,10 @@ void			free_struct(t_file *init);
 void			errorfunctionparse(t_parse *parsed, char *message);
 void			free_map(char **map);
 void			free_parse(t_parse *parsed);
+
+/*					 PARSING_CHARS_UTILS.C			*/
+int				fill_util(t_parse *parsed, t_file *init, int *index);
+int				fill_utils(t_parse *parsed, t_file *init, int *index);
+
 
 #endif
